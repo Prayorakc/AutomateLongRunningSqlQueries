@@ -1,0 +1,45 @@
+﻿ Write-Output "Run started"
+
+# Connection to the SQL Database
+
+$sqlConnection = new-object System.Data.SqlClient.SqlConnection
+
+
+$sqlConnection.ConnectionString = "Data Source=<Enter you data source>;Initial Catalog=<Enter your database name>;Integrated Security=False;User ID=<enter your username to azure>;Password=<enter your password>;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False"
+
+
+$sqlConnection.Open()
+
+
+Write-Output "Azure SQL database connection opened"
+
+
+# Define the SQL command to run
+
+$sqlCommand = new-object System.Data.SqlClient.SqlCommand
+
+$sqlCommand.CommandTimeout = 0
+
+$sqlCommand.Connection = $sqlConnection
+
+
+Write-Output "Issuing command to run stored procedure"
+
+
+# Execute the SQL command
+
+$sqlCommand.CommandText= 'exec <Enter you Store procedure here>'
+
+$result = $sqlCommand.ExecuteNonQuery()
+
+
+Write-Output "SP Execution Completed"
+
+
+# Close the SQL connection
+
+$sqlConnection.Close()
+
+
+Write-Output "Run Completed"
+
