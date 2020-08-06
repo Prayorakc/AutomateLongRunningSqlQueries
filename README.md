@@ -1,0 +1,2 @@
+# AutomateLongRunningSqlQueries
+This script will automate time consuming scripts in azure runbooks. Active Azure subscription and SQL management system is required to run the sql queries in Automation. I had a long stored procedure that would take 4 hours to run everyday, i added the stored procedure to run on schedule every week on weekend to save time. This script will execute the SP every week automatically. 
