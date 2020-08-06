@@ -5,7 +5,7 @@
 $sqlConnection = new-object System.Data.SqlClient.SqlConnection
 
 
-$sqlConnection.ConnectionString = "Data Source=<Enter you data source>;Initial Catalog=<Enter your database name>;Integrated Security=False;User ID=<enter your username to azure>;Password=<enter your password>;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False"
+$sqlConnection.ConnectionString = "Data Source=<Enter you data source>;Initial Catalog=<Enter your database name>;Integrated Security=False;User ID=<enter your username to sql database>;Password=<enter your password>;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False"
 
 
 $sqlConnection.Open()
@@ -28,7 +28,7 @@ Write-Output "Issuing command to run stored procedure"
 
 # Execute the SQL command
 
-$sqlCommand.CommandText= 'exec <Enter you Store procedure here>'
+$sqlCommand.CommandText= 'exec <Enter you Store procedure Name here>'
 
 $result = $sqlCommand.ExecuteNonQuery()
 
